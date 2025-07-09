@@ -2,11 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LevelController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -18,3 +18,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+// Levelコントローラーのルーティング
+Route::controller(LevelController::class)->group(function () {
+    Route::get('/top', 'selectAllLevels');
+});
