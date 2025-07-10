@@ -14,8 +14,8 @@
     </div>
     <div class="content">
         <p class="text-content">むずかしさをえらんでね</p>
-        <form action="" method="get">
-            <select name="level_id" id="level-select">
+        <form action="#" method="get">
+            <select name="level_id" class="level-select">
                 <option value="" hidden>えらんでね</option>
                 @foreach($levels as $level)
                     <option value="{{ $level['level_id'] }}">{{ $level['level'] }}</option>
@@ -23,9 +23,9 @@
             </select>
         </form>
         <p class="text-content">だれがいちばんうまくできたかみれるよ</p>
-        <a href="">ランキングをみる</a>
+        <a href="#" class="ranking">ランキングをみる</a>
         <p class="text-content">いままでにやったこたえのきろくだよ</p>
-        <a href="">りれきをみる</a>
+        <a href="#" class="history">りれきをみる</a>
     </div>
 </body>
 </html>
