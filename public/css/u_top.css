@@ -40,8 +40,9 @@
     color: #f4f4f4;
     border-radius: 15px;
     width: 100%;
-    /* padding: 1% 9%; */
+    height: 6rem;
     border: 9px solid #d35d1d;
+    margin-bottom: 5px;
 }
 
 #u_top .ranking,
@@ -55,8 +56,10 @@
     color: #f4f4f4;
     border-radius: 15px;
     width: 96%;
-    /* padding: 1% 9%; */
+    height: 4rem;
     border: 9px solid #d35d1d;
+    margin-bottom: 5px;
+    padding-top: 10px;
 }
 
 #u_top .level-select option {
@@ -65,7 +68,8 @@
 }
 
 #u_top .text-content {
-    margin: 30px, 0;
+    margin-top: 0;
+    margin-bottom: 20px;
     font-size: 25px;
     color: #323232;
     text-align: center;

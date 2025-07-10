@@ -6,6 +6,7 @@
     <title>ユーザートップ画面</title>
     <link rel="stylesheet" href="{{ asset('css/u_top.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('./css/background.css') }}">
 </head>
 <body id="u_top">
     <div class="header">
