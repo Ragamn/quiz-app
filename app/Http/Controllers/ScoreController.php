@@ -11,6 +11,7 @@ class ScoreController extends Controller
     {
         // スコアの高い順にユーザー名とスコアを取得
         $scores = Score::with('user')
+            ->where('level_id', 1)
             ->select('score_id', 'user_id', 'score', 'level_id')
             ->orderBy('score', 'desc')
             ->get();
