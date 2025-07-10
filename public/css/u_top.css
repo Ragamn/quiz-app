@@ -1,1 +1,52 @@
 @charset "UTF-8";
+
+#u_top {
+    font-family: "Darumadrop One", cursive;
+    margin: 0;
+    padding: 0;
+}
+
+#u_top .title {
+    color: #ff0080;
+    text-shadow: -1px -1px 0 #323232, 1px -1px 0 #323232, -1px 1px 0 #323232,
+        1px 1px 0 #323232;
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+#u_top .logout {
+    color: #323232;
+    text-decoration: none;
+    font-size: 30px;
+    margin: auto 0;
+}
+
+#u_top .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#u_top .content {
+    text-align: center;
+}
+
+#u_top #level-select {
+    font-size: 30px;
+    font-family: "Darumadrop One", cursive;
+    background-color: #005f23;
+    color: #f4f4f4;
+    border-radius: 15px;
+    width: 40%;
+    border: 9px solid #d35d1d;
+}
+
+#u_top #level-select option {
+    color: #f4f4f4;
+    background-color: #323232;
+}
+
+#u_top .text-content {
+    font-size: 20px;
+    color: #323232;
+}
