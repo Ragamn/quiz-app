@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScoreController; // 追加
 use App\Http\Controllers\LevelController;
 
 Route::get('/', function () {
@@ -21,4 +22,10 @@ require __DIR__.'/auth.php';
 // Levelコントローラーのルーティング
 Route::controller(LevelController::class)->group(function () {
     Route::get('/top', 'selectAllLevels');
+});
+
+// Scoreコントローラーのルーティング
+Route::controller(ScoreController::class)->group(function () {
+    Route::get('/ranking', 'ranking')->name('scores.ranking');
+    Route::get('/ranking/level/{levelId}', 'rankingByLevel')->name('scores.ranking.level');
 });
