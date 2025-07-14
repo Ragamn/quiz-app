@@ -1,9 +1,14 @@
-
+<html>
 <head>
     <title>スコアランキング</title>
 </head>
 <body>
     <h1>スコアランキング</h1>
+    @if($userRank)
+        <p>{{ auth()->user()->name }}さんは{{ $userRank }}ばんめ</p>
+    @else
+        <p>あなたのスコアはまだ記録されていません。</p>
+    @endif
     <table>
         <thead>
             <tr>
@@ -23,3 +28,4 @@
         </tbody>
     </table>
 </body>
+</html>
