@@ -46,8 +46,8 @@
 
 
         <div>
-            <button type="submit">
-                ログイン
+            <button type="submit" id="login_btn">
+                <span>ログイン</span>
             </button>
         </div>
     </form>
