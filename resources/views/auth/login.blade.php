@@ -15,13 +15,13 @@
         <div>{{ session('status') }}</div>
     @endif
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" class="login_form">
         @csrf
 
         <!-- Email Address -->
         <div>
             <!-- <label for="email">メールアドレス</label><br> -->
-            <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" required autofocus autocomplete="username" />
+            <input id="email" class="input" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" required autofocus autocomplete="username" />
             @if ($errors->get('email'))
                 <div style="color: red;">
                     @foreach ($errors->get('email') as $error)
@@ -34,7 +34,7 @@
         <!-- Password -->
         <div>
             <!-- <label for="password">パスワード</label><br> -->
-            <input id="password" type="password" name="password" placeholder="ログイン" required autocomplete="current-password" />
+            <input id="password" class="input" type="password" name="password" placeholder="ログイン" required autocomplete="current-password" />
             @if ($errors->get('password'))
                 <div style="color: red;">
                     @foreach ($errors->get('password') as $error)
