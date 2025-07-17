@@ -18,32 +18,49 @@
     </div>
 
     <div class="answers">
-        <button onclick="checkAnswer(1)" class="answer red">①</button>
-        <button onclick="checkAnswer(2)" class="answer green">②</button>
-        <button onclick="checkAnswer(3)" class="answer blue">③</button>
-        <button onclick="checkAnswer(4)" class="answer yellow">④</button>
+        <button onclick="checkAnswer(1)" class="answer red">①こんにちはこんにちはこんにちはこんにちは</button>
+        <button onclick="checkAnswer(2)" class="answer green">②こんにちはこんにちはこんにちはこんにちはこんにちは</button>
+        <button onclick="checkAnswer(3)" class="answer blue">③こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</button>
+        <button onclick="checkAnswer(4)" class="answer yellow">④こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</button>
     </div>
 
     <div id="modal" class="modal">
         <div class="modal-content">
-            <p id="resultText">正解</p>
-            <button onclick="goToNext()">次の問題へ</button>
+            <p id="resultText">〇あたり</p>
+            <p class="answer-text">せいかいは <span id="correctAnswer">① 17個</span></p>
+            <hr class="line">
+            <div class="detail">
+                <details>
+                    <summary>かいせつを見る</summary>
+                    <p>
+                        SDGsは17個の目標があります。SDGsは17個の目標があります。
+                        SDGsは17個の目標があります。SDGsは17個の目標があります。
+                        SDGsは17個の目標があります。SDGsは17個の目標があります。
+                        SDGsは17個の目標があります。SDGsは17個の目標があります。
+                        SDGsは17個の目標があります。SDGsは17個の目標があります。
+                    </p>
+                </details>
+            </div>
+            <button onclick="goToNext()" class="next-button">次のクイズ→</button>
         </div>
     </div>
 
     <script>
-        const correctAnswer = 1; //正解の番号を設定
+        const correctAnswer = 1; //正解を比較するための番号
+        const modal = document.querySelector("#modal");
 
         function checkAnswer(answerNum){
             const resultText = document.querySelector('#resultText');
-            if(answerNum == correctAnswer){
-                resultText.textContent = '正解！';
-            } else {
-                resultText.textContent = '不正解！';
-            }
-            document.querySelector('#modal').style.display = 'block';
-        }
+            modal.classList.add("show");
 
+            if(answerNum == correctAnswer){
+                resultText.textContent = '〇あたり';
+                resultText.style.color = '#FF0000';
+            } else {
+                resultText.textContent = '✕はずれ';
+                resultText.style.color = '#0062FF';
+            }
+        }
         function goToNext(){
             // 次の問題へ移動する処理をここに追加
             alert('次の問題へ移動します');
