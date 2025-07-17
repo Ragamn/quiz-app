@@ -1,0 +1,35 @@
+#u_q_score {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#u_q_score details {
+    width: 50%;
+    border: 1px solid #828282;
+    border-radius: 15px;
+}
+
+#u_q_score summary {
+    list-style-type: none;
+    height: 5rem;
+}
+
+#u_q_score .summary-header {
+    display: flex;
+    margin-left: 3%;
+}
+
+#u_q_score .summary-date {
+    font-size: 12px;
+    margin-left: 3%;
+}
+
+#u_q_score .summary-header .summary-title {
+    margin: 0;
+}
+
+#u_q_score .summary-header .summary-corect {
+    color: #ff0000;
+    margin: 0;
+}
