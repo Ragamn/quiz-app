@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ScoreController; // 追加
 use App\Http\Controllers\LevelController;
+use App\Models\Score;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,4 +30,8 @@ Route::controller(LevelController::class)->group(function () {
 Route::middleware('auth')->controller(ScoreController::class)->group(function () {
     Route::get('/ranking', 'ranking')->name('scores.ranking');
     Route::get('/ranking/level/{levelId}', 'rankingByLevel')->name('scores.ranking.level');
+});
+
+Route::controller(ScoreController::class)->group(function () {
+    Route::get('/score/{levelId}', 'getLatestUserScore')->name('scores.latest');
 });
