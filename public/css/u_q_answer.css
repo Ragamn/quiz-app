@@ -124,6 +124,9 @@ body{
     margin-top: 1rem;
     text-align: center;
 }
+.explanation{
+    font-family:Arial, Helvetica, sans-serif
+}
 .next-button {
     display: block;
     width: 30%;
