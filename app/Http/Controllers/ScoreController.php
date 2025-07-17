@@ -69,12 +69,14 @@ class ScoreController extends Controller
 
         // AnswersとQuizzesとChoicesを結合してユーザーの回答履歴を取得
         $recentAnswers = Answer::join('quizzes', 'answers.quiz_id', '=', 'quizzes.quiz_id')
-            ->join('choices', function($join) {
-                $join->on('answers.quiz_id', '=', 'choices.quiz_id')
-                    ->where('choices.is_correct', '=', true);
+            ->join('choices as user_choice', 'answers.choice_id', '=', 'user_choice.choice_id')
+            ->join('choices as correct_choice', function($join) {
+                $join->on('answers.quiz_id', '=', 'correct_choice.quiz_id')
+                    ->where('correct_choice.is_correct', '=', true);
             })
             ->where('answers.user_id', $currentUserId)
-            ->select('answers.*', 'quizzes.question', 'quizzes.explanation', 'choices.choice as correct_choice')
+            ->select('answers.*', 'quizzes.question', 'quizzes.explanation', 
+                    'user_choice.choice as user_choice', 'correct_choice.choice as correct_choice')
             ->orderBy('answers.created_at', 'desc')
             ->limit(10)
             ->get();
