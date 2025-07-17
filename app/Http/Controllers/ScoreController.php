@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Score;
+use App\Models\Answer;
+use App\Models\Quiz;
+use App\Models\Choice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ScoreController extends Controller
 {
@@ -17,7 +21,7 @@ class ScoreController extends Controller
             ->get();
 
         // ログインユーザーの順位を取得
-        $currentUserId = auth()->id();
+        $currentUserId = Auth::id();
         $userRank = null;
         
         foreach ($scores as $index => $score) {
@@ -39,7 +43,7 @@ class ScoreController extends Controller
             ->get();
         
         // ログインユーザーの順位を取得
-        $currentUserId = auth()->id();
+        $currentUserId = Auth::id();
         $userRank = null;
         
         foreach ($scores as $index => $score) {
@@ -50,5 +54,34 @@ class ScoreController extends Controller
         }
 
         return view('scores.ranking', compact('scores', 'userRank'));
+    }
+
+    // ログインユーザーの最新スコアを取得
+    public function getLatestUserScore($levelId)
+    {
+        $currentUserId = Auth::id();
+        
+        $latestScore = Score::where('user_id', $currentUserId)
+            ->where('level_id', $levelId)
+            ->select('score', 'created_at')
+            ->orderBy('created_at', 'desc')
+            ->first();
+
+        // AnswersとQuizzesとChoicesを結合してユーザーの回答履歴を取得
+        $recentAnswers = Answer::join('quizzes', 'answers.quiz_id', '=', 'quizzes.quiz_id')
+            ->join('choices', function($join) {
+                $join->on('answers.quiz_id', '=', 'choices.quiz_id')
+                    ->where('choices.is_correct', '=', true);
+            })
+            ->where('answers.user_id', $currentUserId)
+            ->select('answers.*', 'quizzes.question', 'quizzes.explanation', 'choices.choice as correct_choice')
+            ->orderBy('answers.created_at', 'desc')
+            ->limit(10)
+            ->get();
+
+        return [
+            'latest_score' => $latestScore,
+            'recent_answers' => $recentAnswers
+        ];
     }
 }
