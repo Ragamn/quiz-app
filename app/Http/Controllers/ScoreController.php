@@ -79,9 +79,6 @@ class ScoreController extends Controller
             ->limit(10)
             ->get();
 
-        return [
-            'latest_score' => $latestScore,
-            'recent_answers' => $recentAnswers
-        ];
+        return view('scores.u_q_score',compact('latestScore', 'recentAnswers'));
     }
 }

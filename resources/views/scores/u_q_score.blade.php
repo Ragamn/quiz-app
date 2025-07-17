@@ -9,16 +9,33 @@
 </head>
 <body id="u_q_score">
     <a href="">さいしょにもどる</a>
-    <h1>てんすう：80てん</h1>
-    <details name="accordion">
-        <summary>
-            <p class="summary-date">2025/07/16</p>
-            <div class="summary-header">
-                <h1 class="summary-title">クイズ1</h1>
-                <h1 class="summary-corect"> 〇あたり！</h1>
+    <h1>てんすう：{{ $latestScore ? $latestScore->score : 0 }}てん</h1>
+
+    @if($recentAnswers && $recentAnswers->count() > 0)
+        @foreach($recentAnswers as $index => $answer)
+        <details>
+            <summary>
+                <p class="summary-date">{{ $answer->created_at->format('Y/m/d') }}</p>
+                <div class="summary-header">
+                    <h1 class="summary-title">クイズ{{ $index + 1 }}</h1>
+                    @if($answer->is_correct)
+                        <h1 class="summary-corect">〇あたり！</h1>
+                    @else
+                        <h1 class="summary-incorect">×はずれ...</h1>
+                    @endif
+                </div>
+            </summary>
+            <div class="summary-core">
+                <h3>{{ $answer->question }}</h3>
+                <p>選んだ答え {{ $answer->choice_id }}</p>
+                <p>正解 {{ $answer->correct_choice }}</p>
+                <p>かいせつ</p>
+                <p>{{ $answer->explanation }}</p>
             </div>
-        </summary>
-        SDGsは何個の目標がありますか？
-    </details>
+        </details>
+        @endforeach
+    @else
+        <p>まだクイズの回答がありません。</p>
+    @endif
 </body>
 </html>

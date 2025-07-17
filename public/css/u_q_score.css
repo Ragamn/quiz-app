@@ -33,3 +33,12 @@
     color: #ff0000;
     margin: 0;
 }
+
+#u_q_score .summary-header .summary-incorect {
+    color: #0062ff;
+    margin: 0;
+}
+
+#u_q_score .summary-core {
+    margin-left: 3%;
+}
