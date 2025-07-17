@@ -27,12 +27,12 @@
     <div id="modal" class="modal">
         <div class="modal-content">
             <p id="resultText">〇あたり</p>
-            <p class="answer-text">せいかいは <span id="correctAnswer">① 17個</span></p>
+            <p class="answer-text">せいかいは <span id="correctAnswer">17個</span></p>
             <hr class="line">
             <div class="detail">
                 <details>
                     <summary>かいせつを見る</summary>
-                    <p>
+                    <p class="explanation">
                         SDGsは17個の目標があります。SDGsは17個の目標があります。
                         SDGsは17個の目標があります。SDGsは17個の目標があります。
                         SDGsは17個の目標があります。SDGsは17個の目標があります。
@@ -41,16 +41,21 @@
                     </p>
                 </details>
             </div>
-            <button onclick="goToNext()" class="next-button">次のクイズ→</button>
+            <button onclick="nextQuiz()" class="next-button">つぎのクイズへ</button>
         </div>
     </div>
 
     <script>
         const correctAnswer = 1; //正解を比較するための番号
         const modal = document.querySelector("#modal");
+        const resultText = document.querySelector('#resultText');
+        const nextBtn = document.querySelector(".next-button")
+        let currentQuestion = 1;
+        const totalQuestions = 10;
 
+        //アンサーチェックする
         function checkAnswer(answerNum){
-            const resultText = document.querySelector('#resultText');
+            
             modal.classList.add("show");
 
             if(answerNum == correctAnswer){
@@ -60,10 +65,27 @@
                 resultText.textContent = '✕はずれ';
                 resultText.style.color = '#0062FF';
             }
+
+            if(currentQuestion == totalQuestions){
+                nextBtn.innerText = 'スコアを見る'
+                nextBtn.onClick = showScore;
+            }else {
+                nextBtn.innerText = 'つぎのクイズへ'
+                nextBtn.onclick = nextQuiz
+            }
         }
-        function goToNext(){
+
+        //次の問題へ移動する
+        function nextQuiz(){
+            currentQuestion++;
             // 次の問題へ移動する処理をここに追加
             alert('次の問題へ移動します');
+        }
+
+        //クイズを終了し、結果画面に行く
+        function showScore(){
+            modal.classList.remove("show")
+            alert('スコアを見る')
         }
     </script>
 </body>
