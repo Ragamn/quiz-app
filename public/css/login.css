@@ -46,6 +46,13 @@ html{
     border-radius: 2px ;
     width: 20.2rem;
 }
+#reg_link{
+    display: block;
+    color: #2C84F8;
+}
+#reg_link:hover{
+    color:#66d6a9;
+}
 #login_btn{
     height: 2.5rem;
     width: 20.5rem;
