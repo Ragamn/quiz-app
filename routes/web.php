@@ -6,7 +6,7 @@ use App\Http\Controllers\ScoreController; // 追加
 use App\Http\Controllers\LevelController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
