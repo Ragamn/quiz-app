@@ -48,4 +48,5 @@ body {
                         77vw 78vh;
 
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
