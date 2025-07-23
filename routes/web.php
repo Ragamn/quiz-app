@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ScoreController; // 追加
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\QuizController;
 use App\Models\Score;
 
 Route::get('/', function () {
@@ -34,4 +35,9 @@ Route::middleware('auth')->controller(ScoreController::class)->group(function ()
 
 Route::controller(ScoreController::class)->group(function () {
     Route::get('/score/{levelId}', 'getLatestUserScore')->name('scores.latest');
+});
+
+// Quizコントローラーのルーティング
+Route::middleware('auth')->controller(QuizController::class)->group(function () {
+    Route::get('/quiz/{levelId}', 'getQuizzes')->name('quiz.start');
 });
