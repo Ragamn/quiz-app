@@ -46,6 +46,9 @@
 
 
         <div>
+            <a href="{{ route('register') }}" id="reg_link">
+                アカウントのない方はこちら
+            </a>
             <button type="submit" id="login_btn">
                 <span>ログイン</span>
             </button>
