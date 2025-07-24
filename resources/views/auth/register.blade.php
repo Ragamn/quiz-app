@@ -66,6 +66,9 @@
         </div>
 
         <div>
+            <a href="{{ route('login') }}" id="login_link">
+                アカウントを持っている方はこちら
+            </a>
             <button type="submit" id="login_btn">
                <span>新規登録</span>
             </button>
