@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/u_q_score.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/background.css') }}">
     <title>スコア表示画面</title>
 </head>
 <body id="u_q_score">
     <a href="">さいしょにもどる</a>
-    <h1>てんすう：{{ $latestScore ? $latestScore->score : 0 }}てん</h1>
+    <h1 class="score">てんすう：{{ $latestScore ? $latestScore->score : 0 }}てん</h1>
 
     @if($recentAnswers && $recentAnswers->count() > 0)
         @foreach($recentAnswers as $index => $answer)
@@ -26,11 +27,15 @@
                 </div>
             </summary>
             <div class="summary-core">
-                <h3>{{ $answer->question }}</h3>
-                <p>選んだ答え {{ $answer->choice_id }}</p>
-                <p>正解 {{ $answer->correct_choice }}</p>
-                <p>かいせつ</p>
-                <p>{{ $answer->explanation }}</p>
+                <p class="question-title">{{ $answer->question }}</p>
+                <div class="question-sub">
+                    <p class="correct-choice-title">こたえ</p>
+                    <p class="correct-choice">{{ $answer->correct_choice }}</p>
+                    <p class="user-choice-subtitle">えらんだこたえ</p>
+                    <p class="user-choice">{{ $answer->user_choice }}</p>
+                    <p class="subtitle">かいせつ</p>
+                    <p class="explanation">{{ $answer->explanation }}</p>
+                </div>
             </div>
         </details>
         @endforeach
