@@ -29,8 +29,8 @@ Route::controller(LevelController::class)->middleware(['auth', 'verified'])->gro
 // Scoreコントローラーのルーティング
 //Route::middleware('auth')を前に付けることでログインしていない状態でアクセスするとログイン画面にリダイレクトするようになる
 Route::middleware('auth')->controller(ScoreController::class)->group(function () {
-    Route::get('/ranking', 'ranking')->name('scores.ranking');
-    Route::get('/ranking/level/{levelId}', 'rankingByLevel')->name('scores.ranking.level');
+    Route::get('/u_q_rank', 'ranking')->name('scores.ranking');
+    Route::get('/u_q_rank/level/{levelId}', 'rankingByLevel')->name('scores.ranking.level');
 });
 
 Route::controller(ScoreController::class)->group(function () {
