@@ -9,7 +9,7 @@
     <title>スコア表示画面</title>
 </head>
 <body id="u_q_score">
-    <a href="">さいしょにもどる</a>
+    <a href="/top">さいしょにもどる</a>
     <h1 class="score">てんすう：{{ $latestScore ? $latestScore->score : 0 }}てん</h1>
 
     @if($recentAnswers && $recentAnswers->count() > 0)
