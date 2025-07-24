@@ -10,9 +10,9 @@ use App\Models\Score;
 Route::get('/', function () {
     return redirect()->route('login');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/top', function () {
+//     return view('top');
+// })->middleware(['auth', 'verified'])->name('top');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -22,8 +22,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 // Levelコントローラーのルーティング
-Route::controller(LevelController::class)->group(function () {
-    Route::get('/top', 'selectAllLevels');
+Route::controller(LevelController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/top', 'selectAllLevels')->name('top');
 });
 
 // Scoreコントローラーのルーティング

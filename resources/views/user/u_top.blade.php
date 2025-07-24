@@ -11,7 +11,12 @@
 <body id="u_top">
     <div class="header">
         <h1 class="title">サスモン</h1>
-        <a href="" class="logout">ログアウト</a>
+        <form method="POST" action="{{ route('logout') }}" style="display: inline;" class="logout">
+            @csrf
+            <button type="submit"  style="background: none; border: none; cursor: pointer; color: inherit; font: inherit;">
+                ログアウト
+            </button>
+        </form>
     </div>
     <div class="content">
         <p class="text-content">むずかしさをえらんでね</p>
