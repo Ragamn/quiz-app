@@ -20,8 +20,6 @@
 
         <!-- Email Address -->
         <div>
-            <!-- <label for="email">メールアドレス</label><br> -->
-            <input id="email" class="input" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" required autofocus autocomplete="username" />
             @if ($errors->get('email'))
                 <div style="color: red;">
                     @foreach ($errors->get('email') as $error)
@@ -29,12 +27,14 @@
                     @endforeach
                 </div>
             @endif
+            <!-- <label for="email">メールアドレス</label><br> -->
+            <input id="email" class="input" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" required autofocus autocomplete="username" />
         </div>
 
         <!-- Password -->
         <div>
             <!-- <label for="password">パスワード</label><br> -->
-            <input id="password" class="input" type="password" name="password" placeholder="ログイン" required autocomplete="current-password" />
+            <input id="password" class="input" type="password" name="password" placeholder="パスワード" required autocomplete="current-password" />
             @if ($errors->get('password'))
                 <div style="color: red;">
                     @foreach ($errors->get('password') as $error)
