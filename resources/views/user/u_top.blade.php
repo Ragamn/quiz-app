@@ -11,9 +11,9 @@
 <body id="u_top">
     <div class="header">
         <h1 class="title">サスモン</h1>
-        <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+        <form method="POST" action="{{ route('logout') }}" style="display: inline;" class="logout">
             @csrf
-            <button type="submit" class="logout" style="background: none; border: none; cursor: pointer; text-decoration: underline; color: inherit; font: inherit;">
+            <button type="submit"  style="background: none; border: none; cursor: pointer; color: inherit; font: inherit;">
                 ログアウト
             </button>
         </form>
