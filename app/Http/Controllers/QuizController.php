@@ -32,6 +32,15 @@ class QuizController extends Controller
             return redirect()->back()->with('error', 'このレベルのクイズがまだ準備されていません。');
         }
         
+        // 各クイズに正解の選択肢を追加
+        $quizzes->each(function($quiz) {
+            $correctChoice = $quiz->choices->where('is_correct', true)->first();
+            $quiz->answer = [
+                'choice_id' => $correctChoice ? $correctChoice->choice_id : null,
+                'choice' => $correctChoice ? $correctChoice->choice : null
+            ];
+        });
+        
         return compact('quizzes', 'levelId');
     }
 }
