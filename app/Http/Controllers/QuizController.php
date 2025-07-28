@@ -31,7 +31,6 @@ class QuizController extends Controller
         if ($quizzes->isEmpty()) {
             return redirect()->back()->with('error', 'このレベルのクイズがまだ準備されていません。');
         }
-        
-        return compact('quizzes', 'levelId');
+        return view('u_q_answer', compact('quizzes', 'levelId'));
     }
 }
