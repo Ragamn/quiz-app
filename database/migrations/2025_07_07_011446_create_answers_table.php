@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users', 'id')->onDelete('cascade');
             $table->foreignId('quiz_id')->constrained('quizzes', 'quiz_id')->onDelete('cascade');
             $table->foreignId('choice_id')->constrained('choices', 'choice_id')->onDelete('cascade');
+            $table->foreignId('score_id')->constrained('scores', 'score_id')->onDelete('cascade');
             $table->boolean('is_correct');
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
