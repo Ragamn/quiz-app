@@ -27,7 +27,7 @@
             @endforeach
         </select>
         <p class="text-content">だれがいちばんうまくできたかみれるよ</p>
-        <a href="#" class="ranking">ランキングをみる</a>
+        <a href="u_q_rank" class="ranking">ランキングをみる</a>
         <p class="text-content">いままでにやったこたえのきろくだよ</p>
         <a href="#" class="history">りれきをみる</a>
     </div>

@@ -1,0 +1,46 @@
+@charset "utf-8";
+#u_q_rank {
+    font-family: "Darumadrop One", cursive;
+}
+
+.back-link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+.user_rank{
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+}
+table{
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 1rem; 
+}
+tr{
+    background-color: #ffffff;
+    box-shadow: 0px 3px 3px #6e6e6e;
+}
+.rank_body{
+    border: 1px solid black;
+}
+.medal{
+    width: 9rem;
+    padding: 0 3rem;
+}
+#rank_num{
+    padding:0 3rem;
+    
+}
+.rank_text{
+    padding: 0 3rem;
+    font-size: 4rem;
+
+}
+/* #a{
+    border: 1px solid black;
+    width: 65rem;
+} */
