@@ -59,6 +59,29 @@ class ScoreTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+
+            // ユーザー3のスコア（レベルが上がるにつれて点数が下がる）
+            [
+                'user_id' => 3,
+                'level_id' => 1, // 初級
+                'score' => 70, // 10問中7問正解
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'user_id' => 3,
+                'level_id' => 2, // 中級
+                'score' => 50, // 10問中5問正解
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'user_id' => 3,
+                'level_id' => 3, // 上級
+                'score' => 40, // 10問中4問正解
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ];
 
         DB::table('scores')->insert($scores);
