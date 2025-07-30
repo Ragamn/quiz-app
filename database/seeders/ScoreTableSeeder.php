@@ -18,21 +18,21 @@ class ScoreTableSeeder extends Seeder
             [
                 'user_id' => 1,
                 'level_id' => 1, // 初級
-                'score' => 10, // 10問中10問正解
+                'score' => 100, // 10問中10問正解
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'user_id' => 1,
                 'level_id' => 2, // 中級
-                'score' => 10, // 10問中10問正解
+                'score' => 100, // 10問中10問正解
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'user_id' => 1,
                 'level_id' => 3, // 上級
-                'score' => 10, // 10問中10問正解
+                'score' => 100, // 10問中10問正解
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -41,21 +41,21 @@ class ScoreTableSeeder extends Seeder
             [
                 'user_id' => 2,
                 'level_id' => 1, // 初級
-                'score' => 6, // 10問中6問正解
+                'score' => 60, // 10問中6問正解
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'user_id' => 2,
                 'level_id' => 2, // 中級
-                'score' => 6, // 10問中6問正解
+                'score' => 60, // 10問中6問正解
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'user_id' => 2,
                 'level_id' => 3, // 上級
-                'score' => 4, // 10問中4問正解
+                'score' => 40, // 10問中4問正解
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

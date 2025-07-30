@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             QuizzesTableSeeder::class,
             ChoicesTableSeeder::class,
-            AnswersTableSeeder::class,
             ScoreTableSeeder::class,
+            AnswersTableSeeder::class,
         ]);
     }
 }

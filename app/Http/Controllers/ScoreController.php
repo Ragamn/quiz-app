@@ -31,7 +31,7 @@ class ScoreController extends Controller
             }
         }
 
-        return view('scores.ranking', compact('scores', 'userRank'));
+        return view('scores.u_q_rank', compact('scores', 'userRank'));
     }
 
     // レベル別ランキング
@@ -53,7 +53,7 @@ class ScoreController extends Controller
             }
         }
 
-        return view('scores.ranking', compact('scores', 'userRank'));
+        return view('scores.u_q_rank', compact('scores', 'userRank'));
     }
 
     // ログインユーザーの最新スコアを取得
@@ -81,9 +81,6 @@ class ScoreController extends Controller
             ->limit(10)
             ->get();
 
-        return [
-            'latest_score' => $latestScore,
-            'recent_answers' => $recentAnswers
-        ];
+        return view('scores.u_q_score',compact('latestScore', 'recentAnswers'));
     }
 }
