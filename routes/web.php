@@ -40,4 +40,5 @@ Route::controller(ScoreController::class)->group(function () {
 // Quizコントローラーのルーティング
 Route::middleware('auth')->controller(QuizController::class)->group(function () {
     Route::get('/quiz/{levelId}', 'getQuizzes')->name('quiz.start');
+    Route::post('/quiz/result', 'saveResults')->name('quiz.result');
 });

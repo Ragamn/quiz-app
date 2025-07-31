@@ -15,6 +15,7 @@ class Answer extends Model
         'user_id',
         'quiz_id',
         'choice_id',
+        'score_id',
         'is_correct'
     ];
 
@@ -38,5 +39,11 @@ class Answer extends Model
     public function choice()
     {
         return $this->belongsTo(Choice::class, 'choice_id', 'choice_id');
+    }
+
+    // Scoreとのリレーション
+    public function score()
+    {
+        return $this->belongsTo(Score::class, 'score_id', 'score_id');
     }
 }

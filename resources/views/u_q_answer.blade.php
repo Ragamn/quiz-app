@@ -178,6 +178,20 @@
                   answers: answers,
                   results: results[0]
                 })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // スコア表示ページにリダイレクト
+                    window.location.href = data.redirect_url;
+                } else {
+                    console.error('Error saving results:', data.error);
+                    alert('結果の保存に失敗しました。');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('エラーが発生しました。');
             });
 
         }
