@@ -31,7 +31,7 @@ class QuizController extends Controller
         if ($quizzes->isEmpty()) {
             return redirect()->back()->with('error', 'このレベルのクイズがまだ準備されていません。');
         }
-        
+
         // 各クイズに正解の選択肢を追加
         $quizzes->each(function($quiz) {
             $correctChoice = $quiz->choices->where('is_correct', true)->first();
@@ -41,6 +41,7 @@ class QuizController extends Controller
             ];
         });
         
-        return compact('quizzes', 'levelId');
+        return view('u_q_answer', compact('quizzes', 'levelId'));
+        
     }
 }

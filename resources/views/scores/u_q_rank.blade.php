@@ -1,28 +1,30 @@
 <html>
 <head>
     <title>スコアランキング</title>
+    <link rel="stylesheet" href="{{ asset('./css/background.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/u_q_rank.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>スコアランキング</h1>
+<body id="u_q_rank"> 
+    <a href="top" class="back-link">←さいしょにもどる</a>
     @if($userRank)
-        <p>{{ auth()->user()->name }}さんは{{ $userRank }}ばんめ</p>
+        <p class="user_rank">{{ auth()->user()->name }}さんは</p><p class="user_rank">{{ $userRank }}ばんめ</p>
     @else
-        <p>あなたのスコアはまだ記録されていません。</p>
+        <p class="user_rank">あなたのスコアはまだ記録されていません。</p>
     @endif
     <table>
-        <thead>
-            <tr>
-                <th>順位</th>
-                <th>ユーザー名</th>
-                <th>スコア</th>
-            </tr>
-        </thead>
-        <tbody>
+        <tbody >
         @foreach($scores as $index => $score)
-            <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $score->user->name }}</td>
-                <td>{{ number_format($score->score) }}点</td>
+            <tr class="rank_body">
+                    @if($index + 1 >= 4)
+                        <td class="rank_text">{{ $index + 1 }}</td>
+                    @else
+                        <td>
+                            <img src="{{ asset('img/kkrn_icon_ranking_' . ($index + 1) . '.png') }}" alt="{{ $index + 1 }}位" class="medal">
+                        </td>
+                    @endif
+                <td class="rank_text">{{ $score->user->name }}</td>
+                <td class="rank_text">{{ number_format($score->score) }}てん</td>
             </tr>
         @endforeach
         </tbody>
