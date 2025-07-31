@@ -8,6 +8,7 @@ use App\Models\Quiz;
 use App\Models\Choice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ScoreController extends Controller
 {
@@ -16,9 +17,11 @@ class ScoreController extends Controller
         // スコアの高い順にユーザー名とスコアを取得
         $scores = Score::with('user')
             ->where('level_id', 1)
-            ->select('score_id', 'user_id', 'score', 'level_id')
+            ->select('user_id', \DB::raw('MAX(score) as score'))
+            ->groupBy('user_id')
             ->orderBy('score', 'desc')
             ->get();
+
 
         // ログインユーザーの順位を取得
         $currentUserId = Auth::id();
@@ -39,6 +42,8 @@ class ScoreController extends Controller
     {
         $scores = Score::with('user')
             ->where('level_id', $levelId)
+            ->select('user_id', \DB::raw('MAX(score) as score'))
+            ->groupBy('user_id')
             ->orderBy('score', 'desc')
             ->get();
         
