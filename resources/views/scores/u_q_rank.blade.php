@@ -12,6 +12,20 @@
     @else
         <p class="user_rank">あなたのスコアはまだ記録されていません。</p>
     @endif
+    <div class="tab">
+        <div class="menu">
+            <input type="radio" name="level" checked class="level-radio" id="level1">
+            <label for="level1" class="level-label">初級</label>
+        </div>
+        <div class="menu">
+            <input type="radio" name="level" class="level-radio" id="level2">
+            <label for="level2" class="level-label">中級</label>
+        </div>
+        <div class="menu">
+            <input type="radio" name="level" class="level-radio" id="level3">
+            <label for="level3" class="level-label">上級</label>
+        </div>
+    </div>
     <table>
         <tbody >
         @foreach($scores as $index => $score)
