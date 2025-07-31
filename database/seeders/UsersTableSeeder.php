@@ -42,6 +42,33 @@ class UsersTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'email' => 'test4@example.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('password123'),
+                'name' => '高橋美咲',
+                'remember_token' => null, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'test5@example.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('password123'),
+                'name' => '山田健太',
+                'remember_token' => null, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'test6@example.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('password123'),
+                'name' => '中村麻里',
+                'remember_token' => null, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ];
 
         DB::table('users')->insert($users);
