@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Quiz;
 use App\Models\Choice;
+use App\Models\Answer;
+use App\Models\Score;
+use Illuminate\Support\Facades\Auth;
 
 class QuizController extends Controller
 {
@@ -43,5 +46,52 @@ class QuizController extends Controller
         
         return view('u_q_answer', compact('quizzes', 'levelId'));
         
+    }
+
+    /**
+     * クイズ結果を保存して、スコア表示ページにリダイレクト
+     */
+    public function saveResults(Request $request)
+    {
+        $userId = Auth::id();
+        $answers = $request->input('answers');
+        $results = $request->input('results');
+        
+        // バリデーション
+        if (!$answers || !$results) {
+            return response()->json(['error' => 'Invalid data'], 400);
+        }
+        
+        $levelId = $results[0];
+        $score = $results[1];
+        
+        try {
+            // まずスコアを保存
+            $scoreRecord = Score::create([
+                'user_id' => $userId,
+                'level_id' => $levelId,
+                'score' => $score * 10
+            ]);
+            
+            // 回答データを保存（score_idを含める）
+            foreach ($answers as $answer) {
+                Answer::create([
+                    'user_id' => $userId,
+                    'quiz_id' => $answer[0],
+                    'choice_id' => $answer[1],
+                    'score_id' => $scoreRecord->score_id,
+                    'is_correct' => $answer[2]
+                ]);
+            }
+            
+            // スコア表示ページのURLを返す
+            return response()->json([
+                'success' => true,
+                'redirect_url' => route('scores.latest', ['levelId' => $levelId])
+            ]);
+            
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to save results: ' . $e->getMessage()], 500);
+        }
     }
 }
