@@ -14,30 +14,25 @@
     <h1 class="quiz-title">クイズ</h1>
 
     <div class="question-box">
-        <p class="question">SDGsは何個の目標がありますか？SDGsは何個の目標がありますか？SDGsは何個の目標がありますか？</p>
+        <p class="question"></p>
     </div>
 
     <div class="answers">
-        <button onclick="checkAnswer(1)" class="answer red">①17</button>
-        <button onclick="checkAnswer(2)" class="answer green">②こんにちはこんにちはこんにちはこんにちはこんにちは</button>
-        <button onclick="checkAnswer(3)" class="answer blue">③こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</button>
-        <button onclick="checkAnswer(4)" class="answer yellow">④こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</button>
+        <button onclick="checkAnswer(1)" class="answer red"></button>
+        <button onclick="checkAnswer(2)" class="answer green"></button>
+        <button onclick="checkAnswer(3)" class="answer blue"></button>
+        <button onclick="checkAnswer(4)" class="answer yellow"></button>
     </div>
 
     <div id="modal" class="modal">
         <div class="modal-content">
             <p id="resultText">〇あたり</p>
-            <p class="answer-text">せいかいは <span id="correctAnswer">17個</span></p>
+            <p class="answer-text">せいかいは <span id="correctAnswer"></span></p>
             <hr class="line">
             <div class="detail">
                 <details>
                     <summary>かいせつを見る</summary>
                     <p class="explanation">
-                        SDGsは17個の目標があります。SDGsは17個の目標があります。
-                        SDGsは17個の目標があります。SDGsは17個の目標があります。
-                        SDGsは17個の目標があります。SDGsは17個の目標があります。
-                        SDGsは17個の目標があります。SDGsは17個の目標があります。
-                        SDGsは17個の目標があります。SDGsは17個の目標があります。
                     </p>
                 </details>
             </div>
