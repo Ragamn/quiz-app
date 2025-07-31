@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class ScoreController extends Controller
 {
-    public function ranking()
+    public function ranking(Request $request)
     {
+        $levelId = $request->input('level', 1);
         // スコアの高い順にユーザー名とスコアを取得
         $scores = Score::with('user')
-            ->where('level_id', 1)
+            ->where('level_id', $levelId)
             ->select('user_id', \DB::raw('MAX(score) as score'))
             ->groupBy('user_id')
             ->orderBy('score', 'desc')
@@ -34,7 +35,11 @@ class ScoreController extends Controller
             }
         }
 
-        return view('scores.u_q_rank', compact('scores', 'userRank'));
+       if ($request->ajax()) {
+            return response()->json(['scores' => $scores, 'userRank' => $userRank]);
+        } else {
+            return view('scores.u_q_rank', compact('scores', 'userRank'));
+        }
     }
 
     // レベル別ランキング
