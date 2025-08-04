@@ -7,7 +7,6 @@
 </head>
 <body id="u_q_rank"> 
     <a href="top" class="back-link">←さいしょにもどる</a>
-    <a href="top" class="back-link">←さいしょにもどる</a>
     <div id="user-rank-display">
         @if($userRank)
             <p class="user_rank">{{ auth()->user()->name }}さんは</p><p class="user_rank">{{ $userRank }}ばんめ</p>
