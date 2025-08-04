@@ -66,11 +66,11 @@ class QuizController extends Controller
         $score = $results[1];
         
         try {
-            // まずスコアを保存
+            // まずスコアを保存（10問ベースで100点満点に換算）
             $scoreRecord = Score::create([
                 'user_id' => $userId,
                 'level_id' => $levelId,
-                'score' => $score * 10
+                'score' => ($score * 10) // 10問中の正解数を10倍して100点満点に換算
             ]);
             
             // 回答データを保存（score_idを含める）

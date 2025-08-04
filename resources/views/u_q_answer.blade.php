@@ -46,14 +46,15 @@
         const resultText = document.querySelector('#resultText');
         const nextBtn = document.querySelector(".next-button");
         let currentQuestion = 1; //現在のクイズ
-        const totalQuestions = 10;
+        const totalQuestions = 10; // 10問に戻す
 
         let answers = []; // ユーザーの回答を保存する配列
         let results = []; //最終スコア保存用
+        let currentShuffledChoices = []; // 現在の問題のシャッフルされた選択肢を保存
 
         //jsonで渡された問題を取ってくる
         const quizzes = @json($quizzes);
-        console.log(quizzes);
+        const levelId = @json($levelId);
 
         displayQuestion(); // 初期表示のために問題を表示
 
@@ -71,6 +72,9 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [shuffledChoices[i], shuffledChoices[j]] = [shuffledChoices[j], shuffledChoices[i]];
             }
+
+            // シャッフルされた選択肢を保存
+            currentShuffledChoices = shuffledChoices;
 
             // 選択肢ボタンにテキストを設定し、正解の選択肢を特定
             const answerButtons = document.querySelectorAll('.answer');
@@ -106,12 +110,15 @@
             modal.classList.add("show");
 
             let currentQuiz = quizzes[currentQuestion - 1];
-            let selectedChoice = currentQuiz.choices[answerNum - 1];
+            
+            // シャッフルされた選択肢から選択されたものを取得
+            let selectedChoice = currentShuffledChoices[answerNum - 1];
             let isCorrect = answerNum === correctAnswer;
 
-            answers.push ([
-                currentQuiz.quiz_id,
-                selectedChoice.choice_id,
+            // 回答を保存（quiz_id, choice_id, 正解フラグ）
+            answers.push([
+                currentQuiz.quiz_id,  // quiz_idを正しく取得
+                selectedChoice.choice_id,  // choice_idを正しく取得
                 isCorrect
             ]);
 
@@ -157,11 +164,8 @@
             //スコア計算
             let correctCount = answers.filter(answer => answer[2]).length;
 
-            let levelId = quizzes[0].level_id;
+            // levelIdをBladeから取得
             results.push([levelId, correctCount]);
-
-            console.log('Quiz results:', results);
-            console.log('User answers:', answers);
 
             fetch('/quiz/result', {
                 method: 'POST',
