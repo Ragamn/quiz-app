@@ -14,833 +14,111 @@ class AnswersTableSeeder extends Seeder
     public function run(): void
     {
         $answers = [
-            // ユーザー1の回答（初級レベル）
-            [
-                'user_id' => 1,
-                'quiz_id' => 1,
-                'choice_id' => 1, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 2,
-                'choice_id' => 5, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 3,
-                'choice_id' => 9, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 4,
-                'choice_id' => 13, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 5,
-                'choice_id' => 17, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 6,
-                'choice_id' => 21, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 7,
-                'choice_id' => 25, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 8,
-                'choice_id' => 29, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 9,
-                'choice_id' => 33, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 10,
-                'choice_id' => 37, // 正解
-                'score_id' => 1, // ユーザー1の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+            // ユーザー1の回答（全レベル満点 - 45問中45問正解）
+            
+            // 初級レベル 1-15問 全正解
+            ['user_id' => 1, 'quiz_id' => 1, 'choice_id' => 1, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 2, 'choice_id' => 5, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 3, 'choice_id' => 9, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 4, 'choice_id' => 13, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 5, 'choice_id' => 17, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 6, 'choice_id' => 21, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 7, 'choice_id' => 25, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 8, 'choice_id' => 29, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 9, 'choice_id' => 33, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 10, 'choice_id' => 37, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 11, 'choice_id' => 41, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 12, 'choice_id' => 45, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 13, 'choice_id' => 49, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 14, 'choice_id' => 53, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 15, 'choice_id' => 57, 'score_id' => 1, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            
+            // 中級レベル 16-30問 全正解
+            ['user_id' => 1, 'quiz_id' => 16, 'choice_id' => 61, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 17, 'choice_id' => 65, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 18, 'choice_id' => 69, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 19, 'choice_id' => 73, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 20, 'choice_id' => 77, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 21, 'choice_id' => 81, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 22, 'choice_id' => 85, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 23, 'choice_id' => 89, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 24, 'choice_id' => 93, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 25, 'choice_id' => 97, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 26, 'choice_id' => 101, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 27, 'choice_id' => 105, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 28, 'choice_id' => 109, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 29, 'choice_id' => 113, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 30, 'choice_id' => 117, 'score_id' => 2, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            
+            // 上級レベル 31-45問 全正解
+            ['user_id' => 1, 'quiz_id' => 31, 'choice_id' => 121, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 32, 'choice_id' => 125, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 33, 'choice_id' => 129, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 34, 'choice_id' => 133, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 35, 'choice_id' => 137, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 36, 'choice_id' => 141, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 37, 'choice_id' => 145, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 38, 'choice_id' => 149, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 39, 'choice_id' => 153, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 40, 'choice_id' => 157, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 41, 'choice_id' => 161, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 42, 'choice_id' => 165, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 43, 'choice_id' => 169, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 44, 'choice_id' => 173, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 1, 'quiz_id' => 45, 'choice_id' => 177, 'score_id' => 3, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
 
-            // ユーザー1の回答（中級レベル）
-            [
-                'user_id' => 1,
-                'quiz_id' => 11,
-                'choice_id' => 41, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 12,
-                'choice_id' => 45, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 13,
-                'choice_id' => 49, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 14,
-                'choice_id' => 53, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 15,
-                'choice_id' => 57, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 16,
-                'choice_id' => 61, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 17,
-                'choice_id' => 65, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 18,
-                'choice_id' => 69, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 19,
-                'choice_id' => 73, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 20,
-                'choice_id' => 77, // 正解
-                'score_id' => 2, // ユーザー1の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+            // ユーザー2の回答（初級12問正解、中級10問正解、上級8問正解）
+            
+            // 初級レベル（12/15問正解）
+            ['user_id' => 2, 'quiz_id' => 1, 'choice_id' => 1, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 2, 'choice_id' => 5, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 3, 'choice_id' => 10, 'score_id' => 4, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 4, 'choice_id' => 13, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 5, 'choice_id' => 17, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 6, 'choice_id' => 22, 'score_id' => 4, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 7, 'choice_id' => 25, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 8, 'choice_id' => 29, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 9, 'choice_id' => 33, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 10, 'choice_id' => 38, 'score_id' => 4, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 11, 'choice_id' => 41, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 12, 'choice_id' => 45, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 13, 'choice_id' => 49, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 14, 'choice_id' => 53, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 15, 'choice_id' => 57, 'score_id' => 4, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
 
-            // ユーザー1の回答（上級レベル）
-            [
-                'user_id' => 1,
-                'quiz_id' => 21,
-                'choice_id' => 81, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 22,
-                'choice_id' => 85, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 23,
-                'choice_id' => 89, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 24,
-                'choice_id' => 93, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 25,
-                'choice_id' => 97, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 26,
-                'choice_id' => 101, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 27,
-                'choice_id' => 105, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 28,
-                'choice_id' => 109, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 29,
-                'choice_id' => 113, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'quiz_id' => 30,
-                'choice_id' => 117, // 正解
-                'score_id' => 3, // ユーザー1の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+            // 中級レベル（10/15問正解）
+            ['user_id' => 2, 'quiz_id' => 16, 'choice_id' => 61, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 17, 'choice_id' => 66, 'score_id' => 5, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 18, 'choice_id' => 69, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 19, 'choice_id' => 73, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 20, 'choice_id' => 78, 'score_id' => 5, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 21, 'choice_id' => 81, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 22, 'choice_id' => 85, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 23, 'choice_id' => 90, 'score_id' => 5, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 24, 'choice_id' => 93, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 25, 'choice_id' => 97, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 26, 'choice_id' => 102, 'score_id' => 5, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 27, 'choice_id' => 105, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 28, 'choice_id' => 109, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 29, 'choice_id' => 113, 'score_id' => 5, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 30, 'choice_id' => 118, 'score_id' => 5, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
 
-            // ユーザー2の回答（初級レベル - 一部間違い）
-            [
-                'user_id' => 2,
-                'quiz_id' => 1,
-                'choice_id' => 1, // 正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 2,
-                'choice_id' => 6, // 不正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 3,
-                'choice_id' => 9, // 正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 4,
-                'choice_id' => 14, // 不正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 5,
-                'choice_id' => 17, // 正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 6,
-                'choice_id' => 21, // 正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 7,
-                'choice_id' => 26, // 不正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 8,
-                'choice_id' => 29, // 正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 9,
-                'choice_id' => 33, // 正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 10,
-                'choice_id' => 38, // 不正解
-                'score_id' => 4, // ユーザー2の初級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-
-            // ユーザー2の回答（中級レベル - 一部間違い）
-            [
-                'user_id' => 2,
-                'quiz_id' => 11,
-                'choice_id' => 41, // 正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 12,
-                'choice_id' => 46, // 不正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 13,
-                'choice_id' => 49, // 正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 14,
-                'choice_id' => 54, // 不正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 15,
-                'choice_id' => 57, // 正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 16,
-                'choice_id' => 61, // 正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 17,
-                'choice_id' => 66, // 不正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 18,
-                'choice_id' => 69, // 正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 19,
-                'choice_id' => 73, // 正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 20,
-                'choice_id' => 78, // 不正解
-                'score_id' => 5, // ユーザー2の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-
-            // ユーザー2の回答（上級レベル - より多くの間違い）
-            [
-                'user_id' => 2,
-                'quiz_id' => 21,
-                'choice_id' => 82, // 不正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 22,
-                'choice_id' => 85, // 正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 23,
-                'choice_id' => 90, // 不正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 24,
-                'choice_id' => 94, // 不正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 25,
-                'choice_id' => 97, // 正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 26,
-                'choice_id' => 102, // 不正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 27,
-                'choice_id' => 105, // 正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 28,
-                'choice_id' => 110, // 不正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 29,
-                'choice_id' => 113, // 正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'quiz_id' => 30,
-                'choice_id' => 118, // 不正解
-                'score_id' => 6, // ユーザー2の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-
-            // ユーザー3の回答（初級レベル - 7問正解）
-            [
-                'user_id' => 3,
-                'quiz_id' => 1,
-                'choice_id' => 1, // 正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 2,
-                'choice_id' => 6, // 不正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 3,
-                'choice_id' => 9, // 正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 4,
-                'choice_id' => 13, // 正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 5,
-                'choice_id' => 18, // 不正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 6,
-                'choice_id' => 21, // 正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 7,
-                'choice_id' => 25, // 正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 8,
-                'choice_id' => 30, // 不正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 9,
-                'choice_id' => 33, // 正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 10,
-                'choice_id' => 37, // 正解
-                'score_id' => 7, // ユーザー3の初級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-
-            // ユーザー3の回答（中級レベル - 5問正解）
-            [
-                'user_id' => 3,
-                'quiz_id' => 11,
-                'choice_id' => 42, // 不正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 12,
-                'choice_id' => 45, // 正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 13,
-                'choice_id' => 50, // 不正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 14,
-                'choice_id' => 53, // 正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 15,
-                'choice_id' => 58, // 不正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 16,
-                'choice_id' => 61, // 正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 17,
-                'choice_id' => 66, // 不正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 18,
-                'choice_id' => 69, // 正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 19,
-                'choice_id' => 74, // 不正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 20,
-                'choice_id' => 77, // 正解
-                'score_id' => 8, // ユーザー3の中級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-
-            // ユーザー3の回答（上級レベル - 4問正解）
-            [
-                'user_id' => 3,
-                'quiz_id' => 21,
-                'choice_id' => 82, // 不正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 22,
-                'choice_id' => 85, // 正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 23,
-                'choice_id' => 90, // 不正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 24,
-                'choice_id' => 93, // 正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 25,
-                'choice_id' => 98, // 不正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 26,
-                'choice_id' => 101, // 正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 27,
-                'choice_id' => 106, // 不正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 28,
-                'choice_id' => 110, // 不正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 29,
-                'choice_id' => 113, // 正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 3,
-                'quiz_id' => 30,
-                'choice_id' => 118, // 不正解
-                'score_id' => 9, // ユーザー3の上級スコア
-                'is_correct' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+            // 上級レベル（8/15問正解）
+            ['user_id' => 2, 'quiz_id' => 31, 'choice_id' => 121, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 32, 'choice_id' => 126, 'score_id' => 6, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 33, 'choice_id' => 129, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 34, 'choice_id' => 134, 'score_id' => 6, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 35, 'choice_id' => 137, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 36, 'choice_id' => 142, 'score_id' => 6, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 37, 'choice_id' => 145, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 38, 'choice_id' => 150, 'score_id' => 6, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 39, 'choice_id' => 153, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 40, 'choice_id' => 158, 'score_id' => 6, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 41, 'choice_id' => 161, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 42, 'choice_id' => 166, 'score_id' => 6, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 43, 'choice_id' => 169, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
+            ['user_id' => 2, 'quiz_id' => 44, 'choice_id' => 174, 'score_id' => 6, 'is_correct' => false, 'created_at' => now(), 'updated_at' => now()], // 不正解
+            ['user_id' => 2, 'quiz_id' => 45, 'choice_id' => 177, 'score_id' => 6, 'is_correct' => true, 'created_at' => now(), 'updated_at' => now()],
         ];
 
         DB::table('answers')->insert($answers);
