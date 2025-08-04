@@ -7,11 +7,14 @@
 </head>
 <body id="u_q_rank"> 
     <a href="top" class="back-link">←さいしょにもどる</a>
-    @if($userRank)
-        <p class="user_rank">{{ auth()->user()->name }}さんは</p><p class="user_rank">{{ $userRank }}ばんめ</p>
-    @else
-        <p class="user_rank">あなたのスコアはまだ記録されていません。</p>
-    @endif
+    <a href="top" class="back-link">←さいしょにもどる</a>
+    <div id="user-rank-display">
+        @if($userRank)
+            <p class="user_rank">{{ auth()->user()->name }}さんは</p><p class="user_rank">{{ $userRank }}ばんめ</p>
+        @else
+            <p class="user_rank">あなたのスコアはまだ記録されていません。</p>
+        @endif
+    </div>
     <div class="tab">
         <div class="menu">
             <input type="radio" name="level" checked class="level-radio" id="level1" value="1">
@@ -64,6 +67,13 @@
                                       '</tr>';
                             $('#ranking-body').append(row);
                         });
+                        var userRankHtml = '';
+                        if (data.userRank) {
+                            userRankHtml = '<p class="user_rank">{{ auth()->user()->name }}さんは</p><p class="user_rank">' + data.userRank + 'ばんめ</p>';
+                        } else {
+                            userRankHtml = '<p class="user_rank">あなたのスコアはまだ記録されていません。</p>';
+                        }
+                        $('#user-rank-display').html(userRankHtml);
                     }
                 });
             });
